@@ -1,0 +1,49 @@
+                            ### Refresh Token step :-
+                            #1. Login
+                            #2. Copy accessToken paste it in 1st "Get request" & copy refreshToken too
+                            #3. After token expire paste refreshToken in "Refresh token Route"
+                            #4. again follow step 2 & 3
+
+GET http://localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTE2Njk4MjQsImV4cCI6MTY1MTY2OTg0OSwiYXVkIjoiNjI2NjNlY2RhYzAzYTAwZGQ0ZjBlMWFjIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.AmO8zGPKMKiM6rsRsmo9KwJGGZG09hFUSft6j3xEy98
+
+
+
+### Login Route
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "hussain@hotmail.com",
+    "password": "Dev@123"
+}
+
+
+
+### Register Route
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "hussain@hotmail.com",
+    "password": "Dev@123"
+}
+
+
+
+### Refresh token Route
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTE2Njk4MjQsImV4cCI6MTY4MzIyNzQyNCwiYXVkIjoiNjI2NjNlY2RhYzAzYTAwZGQ0ZjBlMWFjIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.RLpkFH4qMqrjFYiE0jBG8L6yf4XlnwUKoOHJXr3Hz1c"
+}
+
+
+### Logout Route
+DELETE http://localhost:3000/auth/logout
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTE2Njk4MjQsImV4cCI6MTY4MzIyNzQyNCwiYXVkIjoiNjI2NjNlY2RhYzAzYTAwZGQ0ZjBlMWFjIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.RLpkFH4qMqrjFYiE0jBG8L6yf4XlnwUKoOHJXr3Hz1c"
+}
